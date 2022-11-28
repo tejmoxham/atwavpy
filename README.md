@@ -1,5 +1,5 @@
 
-# At-Wavelegnth Python Toolbox
+# At-Wavelength Python Toolbox
 
 A python toolbox for processing & simulation of X-ray at-wavelength metrology data. Modelling of optical elements assumes coherent illumination and transmission like elements. A number approximate and direct propgation methods have been implemented assuming coherent sources.
 
