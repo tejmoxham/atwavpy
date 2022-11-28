@@ -1,0 +1,14 @@
+LICENSE.txt
+README.md
+setup.py
+atwavpy/__init__.py
+atwavpy/field.py
+atwavpy/optics.py
+atwavpy/plotting.py
+atwavpy/prop.py
+atwavpy/utilities.py
+atwavpy.egg-info/PKG-INFO
+atwavpy.egg-info/SOURCES.txt
+atwavpy.egg-info/dependency_links.txt
+atwavpy.egg-info/requires.txt
+atwavpy.egg-info/top_level.txt
