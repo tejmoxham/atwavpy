@@ -15,4 +15,4 @@ It is recommended that a new environment is generated and used for the project w
 
 Example jupyter noteboooks and data documenting the main features of the package are included in the `/examples/` folder,
  - Simulation of an ideal X-ray KB mirror.
- - Effect of wavefront error on focal profiles. 
+ - Effect of wavefront error on focus. 
