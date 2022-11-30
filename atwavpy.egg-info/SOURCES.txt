@@ -3,6 +3,7 @@ README.md
 setup.py
 atwavpy/__init__.py
 atwavpy/field.py
+atwavpy/math.py
 atwavpy/optics.py
 atwavpy/plotting.py
 atwavpy/prop.py

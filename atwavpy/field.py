@@ -28,19 +28,17 @@ class field1d:
         if method=='fraunhofer':
             self.pixel, self.field = fraunhofer_propagation_1d(self.field, self.energy, self.pixel, distance, **args)
             self.zpos += distance
-            self.nx = self.field.size
         elif method=='fresnel':
             self.pixel, self.field = fresnel_propagation_1d(self.field, self.energy, self.pixel, distance, **args)
             self.zpos += distance
-            self.nx = self.field.size
         elif method=='fresnel-kirchoff':
             self.pixel, self.field = fresnel_kirchhoff_propagator_1d(self.field, self.energy, self.pixel, distance, **args)
             self.zpos += distance
-            self.nx = self.field.size  
         elif method=='angular-spectrum':
             self.pixel, self.field = angular_spectrum_rayleigh_sommerfeld_1d(self.field, self.energy, self.pixel, distance, **args)
             self.zpos += distance
-            self.nx = self.field.size  
+        self.nx = self.field.size  
+        self.xdim = self.pixel*self.nx
         return self
     
     def beam_caustic(self, nz, prange, method='fresnel', start=0, verbose=0, **args):

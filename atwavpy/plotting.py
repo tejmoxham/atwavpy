@@ -3,6 +3,8 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy.optimize import curve_fit
+from .math import gaussian_function_1d
 
 ##################################################################
 
@@ -49,6 +51,26 @@ def plot_peak_focal(field, show=False):
     plt.xlabel('Longitudinal Position [$\mathrm{mm}$]', fontsize=16)
     plt.ylabel('Intensity [$\mathrm{a.u}$]', fontsize=16)   
     print("Peak Longitudinal Position:", zrange[peak_intensity.argmax()], 'mm')
+    if show:
+        plt.tight_layout()
+        plt.show()
+
+##################################################################
+
+def fit_gaussian_profile(field, p0=None, show=False):
+    xaxis = np.linspace(-field.xdim/2, field.xdim/2, field.nx)*1e6
+    yaxis = np.abs(field.field)**2
+    if p0 is None:
+        p0 = [1., 0., 1.]
+    popt, pcov = curve_fit(gaussian_function_1d, xaxis, yaxis, p0)
+    fitted = gaussian_function_1d(xaxis, *popt)
+    print("Focal Size (FWHM):", np.abs(popt[2])*2.355*1e3, 'nm')
+    fig = plt.figure()
+    plt.plot(xaxis, yaxis, 'b')
+    plt.plot(xaxis, fitted, 'r--')
+    fig.suptitle('Fitted Focal Profile', y=0.96, fontweight='bold', fontsize=16)
+    plt.xlabel('Position [$\mathrm{mm}$]', fontsize=16)
+    plt.ylabel('Intensity [$\mathrm{a.u}$]', fontsize=16)   
     if show:
         plt.tight_layout()
         plt.show()
