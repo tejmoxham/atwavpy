@@ -1,8 +1,0 @@
-Metadata-Version: 2.1
-Name: atwavpy
-Version: 0.1.1
-Summary: A python toolbox for processing & simulation of X-ray at-wavelength metrology data. Modelling of optical elements assumes coherent illumination and transmission like elements.
-Home-page: https://github.com/tejmoxham/atwavpy/
-Author: Thomas E. J. Moxham
-Author-email: tej.moxham@gmail.com
-License-File: LICENSE.txt
